@@ -3,16 +3,9 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using System;
 using System.Text;
-unit_test_c_sharpusing System;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Support.UI;
 
-namespace First_Tests
+
+namespace git_web_tests
 {
     [TestFixture]
     public class UntitledTestCase
@@ -20,14 +13,23 @@ namespace First_Tests
         private IWebDriver driver;
         private StringBuilder verificationErrors;
         private string baseURL;
-        private bool acceptNextAlert = true;
+        //private bool acceptNextAlert = true;
+        
 
         [SetUp]
         public void SetupTest()
         {
             driver = new FirefoxDriver();
-            baseURL = "https://yandex.ru/search/?clid=1923018&text=github&lr=194&redircnt=1637732111.1";
+            baseURL = "https://github.com/login";
             verificationErrors = new StringBuilder();
+
+            
+        } 
+        
+        public void TestOpnBrowes()
+        {
+            Console.WriteLine(value: baseURL);
+            Console.ReadKey();
         }
 
         [TearDown]
@@ -45,11 +47,11 @@ namespace First_Tests
         }
 
         [Test]
-        public void TheUntitledTestCaseTest()
+        public void TestCaseTest()
         {
-            driver.Navigate().GoToUrl("https://yandex.ru/search/?clid=1923018&text=github&lr=194&redircnt=1637732111.1");
+            driver.Navigate().GoToUrl(baseURL);
             driver.FindElement(By.XPath("//ul[@id='search-result']/li[2]/div/h2/a/div[2]/span/b[2]")).Click();
-            driver.Navigate().GoToUrl("https://github.com/login");
+            driver.Navigate().GoToUrl("baseTest");
             driver.FindElement(By.Name("commit")).Click();
             driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='/'])[3]/preceding::*[name()='svg'][1]")).Click();
             driver.FindElement(By.Id("repository_name")).Click();
@@ -60,6 +62,7 @@ namespace First_Tests
             driver.FindElement(By.XPath("//summary/img")).Click();
             driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Settings'])[2]/following::button[1]")).Click();
         }
+        /*
         private bool IsElementPresent(By by)
         {
             try
@@ -72,7 +75,7 @@ namespace First_Tests
                 return false;
             }
         }
-
+        
         private bool IsAlertPresent()
         {
             try
@@ -85,7 +88,7 @@ namespace First_Tests
                 return false;
             }
         }
-
+        
         private string CloseAlertAndGetItsText()
         {
             try
@@ -107,5 +110,6 @@ namespace First_Tests
                 acceptNextAlert = true;
             }
         }
+       */ 
     }
 }
