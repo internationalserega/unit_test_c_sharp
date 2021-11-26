@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using System;
 using System.Text;
@@ -11,26 +12,30 @@ namespace git_web_tests
     public class UntitledTestCase
     {
         private IWebDriver driver;
-        private StringBuilder verificationErrors;
+        //private readonly StringBuilder verificationErrors;
         private string baseURL;
         //private bool acceptNextAlert = true;
-        
+        private readonly By _inputLoginButton = By.XPath("//input[@name='login']");
+        private readonly By _inputPasswordButton = By.XPath("//input[@name='password']");
+        private readonly By _InputEnterButton = By.XPath("//input[@name='commit']");
+        private readonly By _InputAvatarButton = By.XPath("//*[@class='Header-link']");
+      //private readonly By _InputLogoutButton = By.XPath("");//найти кнопку выйти
+
+        private const string _login = "internationalserega";
+        private const string _password = "Z21nonStop21Z";
 
         [SetUp]
         public void SetupTest()
         {
-            driver = new FirefoxDriver();
+            driver = new ChromeDriver();
             baseURL = "https://github.com/login";
-            verificationErrors = new StringBuilder();
-
-            
+            driver.Manage().Window.Maximize();
+            //verificationErrors = new StringBuilder();
         } 
-        
         public void TestOpnBrowes()
-        {
-            Console.WriteLine(value: baseURL);
-            Console.ReadKey();
-        }
+            {
+         Console.WriteLine(baseURL);
+            }
 
         [TearDown]
         public void TeardownTest()
@@ -43,16 +48,16 @@ namespace git_web_tests
             {
                 // Ignore errors if unable to close the browser
             }
-            Assert.AreEqual("", verificationErrors.ToString());
+            //Assert.AreEqual("", verificationErrors.ToString());
         }
 
         [Test]
         public void TestCaseTest()
         {
             driver.Navigate().GoToUrl(baseURL);
-            driver.FindElement(By.XPath("//ul[@id='search-result']/li[2]/div/h2/a/div[2]/span/b[2]")).Click();
-            driver.Navigate().GoToUrl("baseTest");
-            driver.FindElement(By.Name("commit")).Click();
+            driver.FindElement(_inputLoginButton).SendKeys(_login);
+            driver.FindElement(_inputPasswordButton).SendKeys(_password);
+            driver.FindElement(_InputEnterButton).Click();
             driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='/'])[3]/preceding::*[name()='svg'][1]")).Click();
             driver.FindElement(By.Id("repository_name")).Click();
             driver.FindElement(By.Id("repository_name")).Clear();
@@ -61,6 +66,8 @@ namespace git_web_tests
             driver.FindElement(By.XPath("//a[@id='code-tab']/span")).Click();
             driver.FindElement(By.XPath("//summary/img")).Click();
             driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='Settings'])[2]/following::button[1]")).Click();
+            driver.FindElement(_InputAvatarButton).Click();
+          //driver.FindElement(_InputLogoutButton).Click();
         }
         /*
         private bool IsElementPresent(By by)
