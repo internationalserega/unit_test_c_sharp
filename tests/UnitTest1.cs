@@ -5,7 +5,7 @@ using unit_test_c_sharp;
 namespace SquareTest
 {
     [TestClass]
-    public class Untitled
+    public class Shapes
     {
         [TestMethod]
         public void TestMethodSquare()

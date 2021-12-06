@@ -1,3 +1,4 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -8,17 +9,15 @@ using System.Threading;
 
 namespace GitHubTests
 {
-    [TestFixture]
+    [TestClass]
     public class CreationRepos
     {
         private IWebDriver driver;
-        //private readonly StringBuilder verificationErrors;
         private string baseURL;
-        //private bool acceptNextAlert = true;
         private readonly By _inputLoginButton = By.XPath("//input[@name='login']");
         private readonly By _inputPasswordButton = By.XPath("//input[@name='password']");
         private readonly By _InputEnterButton = By.XPath("//input[@name='commit']");
-      
+
         [SetUp]
         public void SetupTest()
         {
@@ -26,11 +25,12 @@ namespace GitHubTests
             baseURL = "https://github.com/login";
             driver.Manage().Window.Maximize();
             //verificationErrors = new StringBuilder();
-        } 
+        }
         public void TestOpnBrowes()
-            {
-         Console.WriteLine(baseURL);
-            }
+        {
+            Console.WriteLine(baseURL);
+        }
+
         [TearDown]
         public void TeardownTest()
         {
@@ -44,6 +44,7 @@ namespace GitHubTests
             }
             //Assert.AreEqual("", verificationErrors.ToString());
         }
+
         [Test]
         public void CreationRepositori()
         {
@@ -53,7 +54,7 @@ namespace GitHubTests
             CreateRepository("Exampl_C_Sharp_Test");//создание нового репозитория 
         }
 
-       private void CreateRepository(string _nameRopesitory)
+        private void CreateRepository(string _nameRopesitory)
         {
             driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='/'])[3]/preceding::*[name()='svg'][1]")).Click();
             driver.FindElement(By.Id("repository_name")).Click();
@@ -74,54 +75,5 @@ namespace GitHubTests
         {
             driver.Navigate().GoToUrl(baseURL);
         }
-        /*
-private bool IsElementPresent(By by)
-{
-   try
-   {
-       driver.FindElement(by);
-       return true;
-   }
-   catch (NoSuchElementException)
-   {
-       return false;
-   }
-}
-
-private bool IsAlertPresent()
-{
-   try
-   {
-       driver.SwitchTo().Alert();
-       return true;
-   }
-   catch (NoAlertPresentException)
-   {
-       return false;
-   }
-}
-
-private string CloseAlertAndGetItsText()
-{
-   try
-   {
-       IAlert alert = driver.SwitchTo().Alert();
-       string alertText = alert.Text;
-       if (acceptNextAlert)
-       {
-           alert.Accept();
-       }
-       else
-       {
-           alert.Dismiss();
-       }
-       return alertText;
-   }
-   finally
-   {
-       acceptNextAlert = true;
-   }
-}
-*/
     }
 }
