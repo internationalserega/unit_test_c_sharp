@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace GitHubTests
 {
     class RepositoriName
-{
+    {
         private string name;
         //private string header '';
         //private string footer '';
@@ -36,4 +36,5 @@ namespace GitHubTests
                 name = value;
             }
         }
+    }
 }
