@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace unit_test_c_sharp.Properties {
+namespace RepositoriTest.Properties {
     using System;
     
     

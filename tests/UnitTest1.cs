@@ -1,6 +1,6 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using unit_test_c_sharp;
+using RepositoriTest;
 
 namespace SquareTest
 {

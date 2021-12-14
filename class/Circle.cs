@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace unit_test_c_sharp
+namespace RepositoriTest
 {
     class Circle : Figure
     {
