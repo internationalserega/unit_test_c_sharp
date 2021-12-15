@@ -1,4 +1,5 @@
 ﻿using System;
+using CreationRepositori;
 using NUnit.Framework;
 
 namespace RepositoriRemovalTest
@@ -7,26 +8,8 @@ namespace RepositoriRemovalTest
     public class RepositoriRemoves : TestBase
     {
 
-        [SetUp]
-        public void RemoveTest()
-        {
-        }
-
-        [TearDown]
-        public void TeardownTest()
-        {
-            try
-            {
-                driver.Quit();
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
-        [Test]
-        public void RepositoriRemove()
+    [Test]
+        protected void RepositoriRemove()
         {
             AutorizationGit(account);
             PageSetingsRepositori();
