@@ -1,8 +1,9 @@
+using RepositoriRemovalTest;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using RepositoriRemovalTest;
 
-namespace CreateRepositoryTest
+namespace RepositoriRemovalTest
 {
     [TestClass]
     public class CreationRepos : TestBase
@@ -10,8 +11,8 @@ namespace CreateRepositoryTest
         [Test]
         public void CreationRepositori()
         {
-            AutorizationGit();//страница атворизации
-            CreateRepository(new RepositoriName("Example_C_Sharp_Test"));//создание нового репозитория 
+            LoginHelper.AutorizationGit(new AccountData("chtobinapisat222222222@gmail.com", "Z21nonStop21Z"));//страница атворизации
+            CreateRepository(new ("Example_C_Sharp_Test"));//создание нового репозитория 
         }
     }
 }

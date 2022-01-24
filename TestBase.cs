@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using CreateRepositoryTest;
-using CreationRepositori;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 
 namespace RepositoriRemovalTest
 {
@@ -17,9 +10,10 @@ namespace RepositoriRemovalTest
     {
         protected IWebDriver driver;
         protected string baseURL;
-        private readonly By _inputLoginButton = By.XPath("//input[@name='login']");
-        private readonly By _inputPasswordButton = By.XPath("//input[@name='password']");
-        private readonly By _InputEnterButton = By.XPath("//input[@name='commit']");
+        protected readonly By _inputLoginButton = By.XPath("//input[@name='login']");
+        protected readonly By _inputPasswordButton = By.XPath("//input[@name='password']");
+        protected readonly By _InputEnterButton = By.XPath("//input[@name='commit']");
+        protected LoginHelper LoginHelper;
 
         [SetUp]
         public void SetupTest()
@@ -27,35 +21,13 @@ namespace RepositoriRemovalTest
             driver = new ChromeDriver();
             baseURL = "https://github.com/login";
             driver.Manage().Window.Maximize();
+            LoginHelper = new LoginHelper(driver);
         }
         public void TestOpnBrowes()
         {
             Console.WriteLine(baseURL);
         }
 
-        [TearDown]
-        public void TeardownTest()
-        {
-            try
-            {
-                driver.Quit();
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-
-
-        protected void AutorizationGit(AccountData account)
-        {
-            driver.Navigate().GoToUrl(baseURL); //переход на страницу гита
-            Thread.Sleep(2000);
-            driver.FindElement(By.Id("login_field")).SendKeys(account.Username); //логин
-            driver.FindElement(By.Id("password")).Clear();
-            driver.FindElement(By.Id("password")).SendKeys(account.Password); //пароль
-            driver.FindElement(By.Name("commit")).Click(); //авторизоватся
-        }
 
         protected void CreateRepository(RepositoriName repositoriName)
         {
@@ -68,6 +40,7 @@ namespace RepositoriRemovalTest
             Thread.Sleep(1000);
             driver.FindElement(By.XPath("//a[@id='code-tab']/span")).Click();
         }
+
 
         protected void PageSetingsRepositori()
         {
@@ -91,5 +64,19 @@ namespace RepositoriRemovalTest
             //нажимаем на кнопку удалить репозитория
 
         }
+
+        [TearDown]
+        public void TeardownTest()
+        {
+            try
+            {
+                driver.Quit();
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
+}
+}
 }
