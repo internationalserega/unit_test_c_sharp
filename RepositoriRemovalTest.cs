@@ -1,5 +1,6 @@
 ﻿using System;
-using CreationRepositori;
+using RepositoriRemovalTest;
+using Microsoft.VisualStudio.Services.Account;
 using NUnit.Framework;
 
 namespace RepositoriRemovalTest
@@ -11,7 +12,7 @@ namespace RepositoriRemovalTest
     [Test]
         protected void RepositoriRemove()
         {
-            AutorizationGit(account);
+            LoginHelper.AutorizationGit(new AccountData("chtobinapisat222222222@gmail.com", "Z21nonStop21Z"));//страница атворизации);
             PageSetingsRepositori();
             DeleteRepositori();
         }

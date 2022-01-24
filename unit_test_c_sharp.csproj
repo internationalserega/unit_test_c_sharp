@@ -40,6 +40,7 @@
 
   <ItemGroup>
     <Folder Include="PageObject\" />
+    <Folder Include="tests\" />
   </ItemGroup>
 
 </Project>
