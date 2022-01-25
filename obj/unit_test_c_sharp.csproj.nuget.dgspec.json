@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\тестович\\source\\repos\\unit_test_c_sharp\\unit_test_c_sharp.csproj": {}
+    "C:\\Users\\тестович\\Source\\Repos\\unit_test_c_sharp\\unit_test_c_sharp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\тестович\\source\\repos\\unit_test_c_sharp\\unit_test_c_sharp.csproj": {
+    "C:\\Users\\тестович\\Source\\Repos\\unit_test_c_sharp\\unit_test_c_sharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\тестович\\source\\repos\\unit_test_c_sharp\\unit_test_c_sharp.csproj",
+        "projectUniqueName": "C:\\Users\\тестович\\Source\\Repos\\unit_test_c_sharp\\unit_test_c_sharp.csproj",
         "projectName": "unit_test_c_sharp",
-        "projectPath": "C:\\Users\\тестович\\source\\repos\\unit_test_c_sharp\\unit_test_c_sharp.csproj",
+        "projectPath": "C:\\Users\\тестович\\Source\\Repos\\unit_test_c_sharp\\unit_test_c_sharp.csproj",
         "packagesPath": "C:\\Users\\тестович\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\тестович\\source\\repos\\unit_test_c_sharp\\obj\\",
+        "outputPath": "C:\\Users\\тестович\\Source\\Repos\\unit_test_c_sharp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

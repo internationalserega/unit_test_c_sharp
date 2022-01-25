@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3EUVvgsmReXH8X6GZ3nT58zWQ5O0ZE1bvsifLSxKHjpsntgJmyLcyOL/LOt/IWnaIns+yCgQlHHTDtXTieuBUw==",
+  "dgSpecHash": "5cpe4gm15VEVMrf8mlkUwszkGKrREdWUEQZbDrZcwAhxjiAdmAvoVzapVp5JNt80dyL4/JvAnbncVt22xkThtQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\тестович\\source\\repos\\unit_test_c_sharp\\unit_test_c_sharp.csproj",
+  "projectFilePath": "C:\\Users\\тестович\\Source\\Repos\\unit_test_c_sharp\\unit_test_c_sharp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\тестович\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\тестович\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
