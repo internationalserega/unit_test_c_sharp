@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\class"
   ],
-  "SelectedNode": "\\unit_test_c_sharp.sln",
+  "SelectedNode": "\\unit_test_c_sharp.csproj",
   "PreviewInSolutionExplorer": false
 }

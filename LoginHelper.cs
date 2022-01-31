@@ -5,7 +5,6 @@ using System.Text;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -14,10 +13,17 @@ namespace RepositoriRemovalTest
     public class LoginHelper
     {
         private IWebDriver driver;
+        private string baseURL;
 
         public LoginHelper(IWebDriver driver)
         {
             this.driver = driver;
+        }
+
+        public LoginHelper(IWebDriver driver, string baseURL)
+        {
+            this.driver = driver;
+            this.baseURL = baseURL;
         }
         public void AutorizationGit(AccountData account)
         {

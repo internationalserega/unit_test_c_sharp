@@ -13,7 +13,9 @@ namespace RepositoriRemovalTest
         protected readonly By _inputLoginButton = By.XPath("//input[@name='login']");
         protected readonly By _inputPasswordButton = By.XPath("//input[@name='password']");
         protected readonly By _InputEnterButton = By.XPath("//input[@name='commit']");
-        protected LoginHelper LoginHelper;
+        protected LoginHelper LoginHelper;//обьявляем хелпер логин хелпер в тестовом файле
+        protected NavigationHelper navigator;//
+
 
         [SetUp]
         public void SetupTest()
@@ -21,15 +23,12 @@ namespace RepositoriRemovalTest
             driver = new ChromeDriver();
             baseURL = "https://github.com/login";
             driver.Manage().Window.Maximize();
-            LoginHelper = new LoginHelper(driver);
-        }
-        public void TestOpnBrowes()
-        {
-            Console.WriteLine(baseURL);
+            LoginHelper = new LoginHelper(driver);//здсь тоже нужно обьявить логин хелпер чтобы он он видео дравер
+                                                  //как обьявлённый в тестовом файле
+            navigator = new NavigationHelper(driver, baseURL);
         }
 
-
-        protected void CreateRepository(RepositoriName repositoriName)
+        public void CreateRepository(RepositoriName repositoriName)
         {
             driver.FindElement(By.XPath("(.//*[normalize-space(text()) and normalize-space(.)='/'])[3]/preceding::*[name()='svg'][1]")).Click();
             driver.FindElement(By.Id("repository_name")).Click();
@@ -41,16 +40,7 @@ namespace RepositoriRemovalTest
             driver.FindElement(By.XPath("//a[@id='code-tab']/span")).Click();
         }
 
-
-        protected void PageSetingsRepositori()
-        {
-            Thread.Sleep(2000);
-            driver.FindElement(By.LinkText("internationalserega/Example_C_Sharp_Test")).Click();//кликаем по ссылке репозитория
-            Thread.Sleep(2000);
-            driver.FindElement(By.XPath("//*[@id='settings-tab']")).Click();//кликаем по настройке репозитория
-        }
-
-        protected void DeleteRepositori()
+        public void DeleteRepositori()
         {
             Thread.Sleep(2000);
             driver.FindElement(By.XPath("//*[@class='details-reset details-overlay details-overlay-dark flex-md-order-1 flex-order-2']")).Click();
@@ -77,6 +67,4 @@ namespace RepositoriRemovalTest
             }
         }
     }
-}
-}
 }

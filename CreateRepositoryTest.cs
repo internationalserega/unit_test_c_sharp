@@ -1,7 +1,5 @@
-using RepositoriRemovalTest;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
-using RepositoriRemovalTest;
 
 namespace RepositoriRemovalTest
 {
@@ -11,7 +9,9 @@ namespace RepositoriRemovalTest
         [Test]
         public void CreationRepositori()
         {
-            LoginHelper.AutorizationGit(new AccountData("chtobinapisat222222222@gmail.com", "Z21nonStop21Z"));//страница атворизации
+            GoToHoMeGit(LoginHelper);
+            CreateRepository.AutorizationGit();
+
             CreateRepository(new ("Example_C_Sharp_Test"));//создание нового репозитория 
         }
     }

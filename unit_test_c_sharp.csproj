@@ -1,10 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="PageObject\**" />
+    <EmbeddedResource Remove="PageObject\**" />
+    <None Remove="PageObject\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
@@ -39,7 +45,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="PageObject\" />
     <Folder Include="tests\" />
   </ItemGroup>
 

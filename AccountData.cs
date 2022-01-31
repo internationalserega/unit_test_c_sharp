@@ -11,7 +11,7 @@ namespace RepositoriRemovalTest
         protected string username;
         protected string password;
 
-        protected AccountData(string username, string password)
+        public AccountData(string username, string password)
         {
             this.username = username;
             this.password = password;
